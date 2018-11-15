@@ -229,8 +229,12 @@ public class NavigationActivity extends AppCompatActivity implements DefaultHard
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        getReactGateway().onActivityResult(requestCode, resultCode, data);
-        NavigationApplication.instance.getActivityCallbacks().onActivityResult(requestCode, resultCode, data);
+        try {
+            getReactGateway().onActivityResult(requestCode, resultCode, data);
+            NavigationApplication.instance.getActivityCallbacks().onActivityResult(requestCode, resultCode, data);
+        }catch (Exception exception){
+            // handled exception
+        }
     }
 
     @Override
