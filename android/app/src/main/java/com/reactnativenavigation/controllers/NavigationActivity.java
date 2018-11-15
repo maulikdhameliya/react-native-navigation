@@ -232,7 +232,7 @@ public class NavigationActivity extends AppCompatActivity implements DefaultHard
         try {
             getReactGateway().onActivityResult(requestCode, resultCode, data);
             NavigationApplication.instance.getActivityCallbacks().onActivityResult(requestCode, resultCode, data);
-        }catch (Exception exception){
+        } catch (Exception exception) {
             // handled exception
         }
     }
